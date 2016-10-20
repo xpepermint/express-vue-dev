@@ -2,8 +2,6 @@ const express = require('express');
 const {vueDevServer} = require('./middlewares/vue');
 const {appRender} = require('./middlewares/app');
 
-const isProduction = process.env.NODE_ENV === 'production';
-
 exports.createServer = function (host, port, cb) {
   let app = express();
   app.use(vueDevServer());
