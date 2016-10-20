@@ -1,6 +1,6 @@
 {
   "name": "express-vue-dev",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Vue.js development server middleware for Express.js.",
   "main": "./src/index.js",
   "ava": {
@@ -64,7 +64,7 @@
     "webpack-manifest-plugin": "1.1.0"
   },
   "peerDependencies": {
-    "vue-builder": "1.1.3",
+    "vue-builder": "1.1.x",
     "webpack": "2.1.0-beta.25"
   },
   "dependencies": {
