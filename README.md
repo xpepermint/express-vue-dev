@@ -1,6 +1,6 @@
 ![Build Status](https://travis-ci.org/xpepermint/express-vue-dev.svg?branch=master)&nbsp;[![NPM Version](https://badge.fury.io/js/express-vue-dev.svg)](https://badge.fury.io/js/express-vue-dev)&nbsp;[![Dependency Status](https://gemnasium.com/xpepermint/express-vue-dev.svg)](https://gemnasium.com/xpepermint/express-vue-dev)
 
-# [express](http://expressjs.com)-[vue-builder](https://github.com/xpepermint/vue-builder)
+# [express](http://expressjs.com)-[vue](http://vuejs.org)-dev
 
 > Vue.js development server middleware for Express.js.
 
