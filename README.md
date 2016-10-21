@@ -22,7 +22,7 @@ This is an open source package for [Vue.js](http://vuejs.org/) and [Express.js](
 Run the command below to install the package.
 
 ```
-$ npm install vue-builder webpack@2.1.0-beta.25
+$ npm install --save-dev vue-builder webpack@2.1.0-beta.25
 $ npm install --save-dev express-vue-dev
 ```
 
