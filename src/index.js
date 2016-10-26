@@ -45,6 +45,9 @@ exports.devServer = function ({server, client, verbose=false}={}) {
       serverBuilder.compile().then((source) => {
         req.vue = new VueRender(source);
         next();
+      })
+      .catch((err) => {
+        next(err);
       });
     }
   ]);
