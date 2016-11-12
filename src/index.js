@@ -31,7 +31,7 @@ exports.devServer = function ({server, client, verbose=false}={}) {
 
   let clientCompiler = webpack(clientConfig);
   let serverBuilder = new VueBuilder(serverConfig);
-  let render = null; // renderer is cached
+  let source = null; // prebundled code
 
   return combine([
     webpackDevMiddleware(clientCompiler, {
@@ -43,20 +43,17 @@ exports.devServer = function ({server, client, verbose=false}={}) {
       historyApiFallback: true
     }),
     (req, res, next) => {
-      let promise = null;
-      if (!render) {
-        promise = serverBuilder.compile().then((source) => {
-          render = new VueRender(source);
-        });
+      if (!source) {
+        return serverBuilder.compile()
+          .then((s) => source = s)
+          .then((s) => next())
+          .catch(next);
       }
-      else {
-        promise = Promise.resolve(render);
-      }
-
-      promise.then(() => {
-        req.vue = render;
-        next();
-      }).catch(next);
+      return next();
+    },
+    (req, res, next) => {
+      req.vue = new VueRender(source); // re-run in a new context for each request to ensure discrete state between requests
+      next();
     }
   ]);
 }
