@@ -1,15 +1,9 @@
-const {build} = require('vue-webpack');
 const {devServer} = require('../../../src');
+const webpack = require('../../config/webpack');
 
 exports.vueDevServer = function(ctx) {
   return devServer({
-    server: build({
-      mode: 'server',
-      inputFilePath: `${__dirname}/../../app/server-entry.js`
-    }),
-    client: build({
-      mode: 'client',
-      inputFilePath: `${__dirname}/../../app/client-entry.js`
-    })
-  })
+    server: webpack({mode: 'server'}),
+    client: webpack({mode: 'client'})
+  });
 };
