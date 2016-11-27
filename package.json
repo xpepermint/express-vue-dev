@@ -1,6 +1,6 @@
 {
   "name": "express-vue-dev",
-  "version": "1.11.0",
+  "version": "1.11.1",
   "description": "Vue.js development server middleware for Express.js.",
   "main": "./src/index.js",
   "ava": {
